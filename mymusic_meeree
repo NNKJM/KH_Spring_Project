@@ -1,0 +1,24 @@
+// 좋아요 눌렀을 때 리퀘스트 매핑 미구현
+// 음악을 처음 눌렀을 때 체크해주기
+
+임시 pom.properties
+version=1.0.0-BUILD-SNAPSHOT
+groupId=com.khie
+m2e.projectName=KH-final-group3
+m2e.projectLocation=C\:\\NCS\\workspace(spring)\\KH-final-group3
+artifactId=music
+
+https://hdhdeveloper.tistory.com/56 /// DIV 새로고침하는 스크립트
+
+# java.com.khie.music.MusicController
+
+# resources.mapper.music.xml
+	
+# resource.mybatis-config.xml
+
+ # WEB-INF.views
+ mymusic.jsp -- 내 음악 표시 페이지, 플레이리스트 정렬
+ music_LikeList.jsp -- 내가 '좋아요'를 표시한 음악, 음악 서치 페이지 완성 후 작업
+ music_RecentList.jsp -- 내가 최근 들은 음악, 음악 서치 페이지 완성 후 작업
+ music_MuchList.jsp -- 내가 많이 들은 음악, 음악 서치 페이지 완성 후 작업
+ 

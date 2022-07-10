@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+  	<typeAliases>
+  	<typeAlias type="com.khie.model.MusicDAO" alias="MusicDAO"/>
+  	<typeAlias type="com.khie.model.MusicDTO" alias="MusicDTO"/>
+  	<typeAlias type="com.khie.model.PageDTO" alias="PageDTO"/>
+  	<typeAlias type="com.khie.model.MusicReplyDTO" alias="MusicReplyDTO"/>
+  	<typeAlias type="com.khie.model.MyMusicDAO" alias="MyMusicDAO"/>
+  	<typeAlias type="com.khie.model.MyMusicDTO" alias="MyMusicDTO"/>
+  	<typeAlias type="com.khie.model.PlaylistDTO" alias="PlaylistDTO"/>
+  	<typeAlias type="com.khie.model.MusicReplyDTO" alias="MusicReplyDTO"/>
+  	<typeAlias type="com.khie.model.VideoReplyDAO" alias="VideoReplyDAO"/>
+  	<typeAlias type="com.khie.model.VideoReplyDTO" alias="VideoReplyDTO"/>
+    <typeAlias type="com.khie.model.MusicArtistDAO" alias="ArtistDAO"/>
+  	<typeAlias type="com.khie.model.MusicArtistDTO" alias="ArtistDTO"/>
+  	</typeAliases>
+  </configuration>

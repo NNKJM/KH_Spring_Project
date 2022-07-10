@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD(Document Type Definition)
+	 - 작성한 문서가 어떤문서인지에 대해서 정의하는 것 
+	 - 하나의 시스템 내에서 사용할 XML 데엍의 구조를 정의하여 유효성을 점검시 사용함 -->
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.khie.model.MemberDAO">
+   
+   <select id="login" parameterType="com.khie.model.MemberDTO" resultType="com.khie.model.MemberDTO">
+    select 
+      *
+    from
+      music_member
+     where user_id = #{user_id}
+           and user_pwd = #{user_pwd}
+   </select>
+   
+   <select id="pur1" parameterType="int">
+   update music_member 
+           set user_purchase = 'true',
+               user_purchase_no = '1'
+           where user_no = #{user_no};
+   </select>
+   
+   <select id="pur2" parameterType="int">
+   update music_member 
+            set user_purchase = 'true',
+               user_purchase_no = '2' 
+           where user_no = #{user_no};
+   </select>
+   
+   <select id="pur3" parameterType="int">
+   update music_member 
+            set user_purchase = 'true',
+               user_purchase_no = '3'
+           where user_no = #{user_no};
+   </select>
+   
+   <select id="pur4" parameterType="int">
+   update music_member 
+            set user_purchase = 'true',
+               user_purchase_no = '4' 
+           where user_no = #{user_no};
+   </select>
+   
+   <select id="pur5" parameterType="int">
+   update music_member 
+            set user_purchase = 'true',
+               user_purchase_no = '5'
+           where user_no = #{user_no};
+   </select>
+   
+   <update id="modify" parameterType="com.khie.model.MemberDTO">
+		update music_member set user_email = #{user_email},
+			user_phone = #{user_phone}, user_update = sysdate
+			where user_no = #{user_no}
+	</update>
+	
+	<select id="every" resultType="com.khie.model.MemberDTO">
+	   select * from music_member order by user_no desc
+	</select>
+	
+	<insert id="add" parameterType="com.khie.model.MemberDTO">
+		<selectKey keyProperty="user_no" resultType="int" order="BEFORE">
+			select max(user_no) from music_member
+		</selectKey>
+	 insert into music_member values(#{user_no} +1,
+	    #{user_id}, #{user_pwd},#{user_name},#{user_gender}, 
+	    #{user_email}, #{user_phone},'false','0', sysdate,'',2)
+	</insert>
+	
+	<select id="content" parameterType="int" resultType="com.khie.model.MemberDTO">
+	  select * from music_member where user_no = #{user_no}
+	</select>
+	
+	<delete id="user_delete" parameterType="int">
+	 delete from music_member where user_no = #{user_no}
+	</delete>
+
+    <update id="Sequence" parameterType="int">
+    <![CDATA[
+        update music_member set user_no = user_no -1 where user_no > #{user_no} 
+    ]]>
+    </update>
+    
+    <update id="change" parameterType="com.khie.model.MemberDTO">
+	 
+		update music_member set user_purchase = 'true',
+               user_purchase_no = '1'
+		       where user_no = #{user_no}
+     
+	</update>
+	
+	<update id="change2" parameterType="com.khie.model.MemberDTO">
+	 
+		update music_member set user_purchase = 'true',
+               user_purchase_no = '2' 
+		       where user_no = #{user_no}
+     
+	</update>
+	
+	<update id="change3" parameterType="com.khie.model.MemberDTO">
+	 
+		update music_member set user_purchase = 'true',
+               user_purchase_no = '3' 
+		       where user_no = #{user_no}
+     
+	</update>
+	
+	<update id="change4" parameterType="com.khie.model.MemberDTO">
+	 
+		update music_member set user_purchase = 'true',
+               user_purchase_no = '4' 
+		       where user_no = #{user_no}
+     
+	</update>
+	
+	<update id="change5" parameterType="com.khie.model.MemberDTO">
+	 
+		update music_member set user_purchase = 'true',
+               user_purchase_no = '5' 
+		       where user_no = #{user_no}
+     
+	</update>
+	
+	
+	<update id="cancle" parameterType="com.khie.model.MemberDTO">
+	 
+		update music_member set user_purchase = 'false',
+		       user_purchase_no = '0' 
+		       where user_no = #{user_no}
+     
+	</update>
+   
+   
+</mapper>
